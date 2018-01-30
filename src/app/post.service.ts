@@ -8,16 +8,18 @@ import { Comment } from './comment';
 @Injectable()
 export class PostService {
 
-  private productsServiceURI: string = 'http://jsonplaceholder.typicode.com/posts';
+  private productsServiceURI: string = 'http://jsonplaceholder.typicode.com';
 
    constructor(private http: HttpClient) {}
 
    // get all posts
    getAllPosts(): Observable<Comment[]> {
 
-   let url = `${this.productsServiceURI}`;
-
+   let url = `${this.productsServiceURI}/posts`;
+   console.log(url);
+   console.log(this.http.get<Comment[]>(url));
    return this.http.get<Comment[]>(url);
+
  }
 
    // get comments based on the index

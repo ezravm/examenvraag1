@@ -17,7 +17,8 @@ var PostListComponent = (function () {
     }
     PostListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.PostService.getAllPosts().subscribe(function (data) { return _this.Comment = data; });
+        this.postService.getAllPosts().subscribe(function (data) { return _this.comments = data; });
+        console.log(this.comments);
     };
     PostListComponent.prototype.getComments = function (index) { };
     PostListComponent.prototype.printComments = function (comments) { };

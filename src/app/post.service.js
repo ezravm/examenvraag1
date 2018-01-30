@@ -13,11 +13,13 @@ var http_1 = require("@angular/common/http");
 var PostService = (function () {
     function PostService(http) {
         this.http = http;
-        this.productsServiceURI = 'http://jsonplaceholder.typicode.com/posts';
+        this.productsServiceURI = 'http://jsonplaceholder.typicode.com';
     }
     // get all posts
     PostService.prototype.getAllPosts = function () {
-        var url = "" + this.productsServiceURI;
+        var url = this.productsServiceURI + "/posts";
+        console.log(url);
+        console.log(this.http.get(url));
         return this.http.get(url);
     };
     return PostService;

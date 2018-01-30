@@ -1,6 +1,8 @@
 "use strict";
 var Comment = (function () {
-    function Comment(title, body) {
+    function Comment(userID, id, title, body) {
+        this.userID = userID;
+        this.id = id;
         this.title = title;
         this.body = body;
     }
