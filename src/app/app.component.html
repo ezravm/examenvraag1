@@ -1,9 +1,10 @@
 <div class = 'container'>
    <h1>Posts</h1>
    <br />
+   <button routerLink='/list'>List Comments</button>
    <br />
 
-   <!--router-outlet></router-outlet-->
-   <post-list (commentsFound)='handlecommentsFound($event)'></post-list>
+   <router-outlet></router-outlet>
+   <!-- <post-list (commentsFound)='handlecommentsFound($event)'></post-list> -->
 
 </div>
